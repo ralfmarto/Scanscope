@@ -1,25 +1,18 @@
 # Scanscope
 
-**Scanscope** é uma ferramenta de varredura de código-fonte altamente configurável, que combina expressões regulares, validações encadeadas e inteligência artificial para identificar riscos reais com mais precisão e menos falsos positivos.
+Scanscope é uma ferramenta de varredura de código-fonte configurável em Go. As regras são definidas em `config/rules.json` e podem conter etapas encadeadas e validação opcional com a OpenAI.
 
-## ✨ Principais recursos
+## Recursos
 
-- ✅ Análise estática por regras definidas em JSON
-- 🔁 Encadeamento de regex e validações por contexto
-- 🤖 Integração com IA (OpenAI) para validação semântica
-- 📁 Suporte a múltiplas extensões de arquivos
-- 🧠 Cache inteligente por hash + categoria
-- 📊 Geração de relatórios em JSON e Markdown
-- ⚙️ Integração com GitHub Actions para uso em CI/CD
+- Regras hierárquicas em JSON
+- Cache baseado em hash SHA-256 do arquivo e categoria
+- Suporte a múltiplas extensões de arquivos
+- Validação semântica opcional via IA
+- Relatórios em `report.json` e `report.md`
 
-## 💼 Casos de uso
-
-- Detecção de dados sensíveis (CPF, CNPJ, senhas)
-- Verificação de logs mal utilizados
-- Análise personalizada de regras internas de SAST
-- Criação de políticas de segurança como código
-
-## 🚀 Como executar
+## Execução
 
 ```bash
-go run ./cmd/scanner/main.go
+# variáveis como OPENAI_API_KEY devem estar definidas para uso da IA
+ go run ./cmd/scanner/main.go
+```

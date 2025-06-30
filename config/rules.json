@@ -1,0 +1,28 @@
+[
+  {
+    "id": "password",
+    "name": "Possible Password",
+    "category": "secrets",
+    "file_extensions": [".go", ".py", ".js"],
+    "regex": "(?i)password\\s*[:=]\\s*\"?[^\"\\n]+\"?",
+    "prompt": "O trecho a seguir contém uma senha ou credencial?",
+    "children": []
+  },
+  {
+    "id": "aws-key",
+    "name": "AWS Access Key",
+    "category": "secrets",
+    "file_extensions": [".go", ".py", ".js"],
+    "regex": "AKIA[0-9A-Z]{16}",
+    "children": [
+      {
+        "id": "aws-secret",
+        "name": "AWS Secret Key",
+        "category": "secrets",
+        "regex": "(?i)aws_secret_access_key",
+        "prompt": "Confirme se esta key pair AWS é real.",
+        "children": []
+      }
+    ]
+  }
+]
